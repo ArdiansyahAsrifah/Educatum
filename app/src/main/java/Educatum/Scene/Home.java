@@ -34,6 +34,10 @@ public class Home {
         welcomeText.setTextAlignment(TextAlignment.CENTER);
 
         Button startButton = new Button("START");
+        startButton.setOnAction(e -> {
+            FeatureScene featureScene = new FeatureScene(stage);
+            featureScene.show();
+        });
         startButton.setStyle("-fx-background-color: transparent;");
         startButton.setId("start-button");
         
