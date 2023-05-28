@@ -40,13 +40,14 @@ public class JurusanUI {
             ui.show();
         });
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/UIDesign.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/UI2Design.png"));
 
-        BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
-                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
-                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
+            BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
+            BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
+            new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
 
         Background background = new Background(backgroundImg);
+        gridPane.setBackground(background);
 
         TableView<JurusanData> jurusanTable = createJurusanTable();
 
@@ -72,9 +73,11 @@ public class JurusanUI {
 
         TableColumn<JurusanData, String> jurusanColumn = new TableColumn<>("Jurusan");
         jurusanColumn.setCellValueFactory(new PropertyValueFactory<>("jurusan"));
+        jurusanColumn.setPrefWidth(300);
 
         TableColumn<JurusanData, String> fakultasColumn = new TableColumn<>("Fakultas");
         fakultasColumn.setCellValueFactory(new PropertyValueFactory<>("fakultas"));
+        fakultasColumn.setPrefWidth(400);
 
         table.getColumns().addAll(jurusanColumn, fakultasColumn);
 
