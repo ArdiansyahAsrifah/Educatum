@@ -29,21 +29,25 @@ public class FeatureScene {
         gridPane.setPadding(new Insets(50));
 
         Button aboutUniButton = createTransparentButton("About Uni");
+        aboutUniButton.setStyle("-fx-text-fill: purple;");
         aboutUniButton.setOnAction(e -> {
             // Logika untuk tombol "About Uni"
         });
 
         Button learningButton = createTransparentButton("Learning");
+        learningButton.setStyle("-fx-text-fill: purple;");
         learningButton.setOnAction(e -> {
             // Logika untuk tombol "Learning"
         });
 
         Button exercisesButton = createTransparentButton("Exercises");
+        exercisesButton.setStyle("-fx-text-fill: purple;");
         exercisesButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"
         });
 
         Button backButton = createTransparentButton("Back");
+        backButton.setStyle("-fx-text-fill: purple");
         backButton.setOnAction(e -> {
             Home home = new Home(stage);
             home.show();
