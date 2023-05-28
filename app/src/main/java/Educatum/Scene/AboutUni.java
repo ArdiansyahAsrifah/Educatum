@@ -1,5 +1,6 @@
 package Educatum.Scene;
 
+import Educatum.AboutUNI.UI.Ui;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -27,6 +28,8 @@ public class AboutUni {
         Button uiButton = createButton("Universitas Indonesia");
         uiButton.setOnAction(e -> {
             uiButton.setBackground(new Background(new BackgroundFill(Color.YELLOW, null, null))); // Ubah latar belakang tombol saat diklik
+            Ui ui = new Ui(stage);
+            ui.show();
         });
 
         Button ugmButton = createButton("Universitas Gadjah Mada");
