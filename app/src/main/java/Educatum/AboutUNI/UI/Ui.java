@@ -40,7 +40,8 @@ public class Ui {
         Button alamatButton = createTransparentButton("Alamat");
         alamatButton.setStyle("-fx-text-fill: green;");
         alamatButton.setOnAction(e -> {
-            // Logika untuk tombol "Learning"
+            AlamatUI alamatUI = new AlamatUI(stage);
+            alamatUI.show();
         });
 
         Button seleksiButton = createTransparentButton("Seleksi Masuk");
