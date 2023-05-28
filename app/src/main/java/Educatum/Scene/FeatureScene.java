@@ -32,6 +32,8 @@ public class FeatureScene {
         aboutUniButton.setStyle("-fx-text-fill: purple;");
         aboutUniButton.setOnAction(e -> {
             // Logika untuk tombol "About Uni"
+            AboutUni aboutUni = new AboutUni(stage);
+            aboutUni.show();
         });
 
         Button learningButton = createTransparentButton("Learning");
