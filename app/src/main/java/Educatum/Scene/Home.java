@@ -33,7 +33,7 @@ public class Home {
         welcomeText.setId("welcome-text");
         welcomeText.setTextAlignment(TextAlignment.CENTER);
 
-        Button startButton = new Button("START");
+        Button startButton = new Button("  Start");
         startButton.setOnAction(e -> {
             FeatureScene featureScene = new FeatureScene(stage);
             featureScene.show();
@@ -41,9 +41,9 @@ public class Home {
         startButton.setStyle("-fx-background-color: transparent;");
         startButton.setId("start-button");
         
-        startButton.setPadding(new Insets(20, 20, 20, 20));
+        startButton.setPadding(new Insets(20, 35, 20, 20));
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/Home.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/HomeDesign.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,

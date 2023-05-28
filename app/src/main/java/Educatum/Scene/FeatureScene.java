@@ -29,7 +29,7 @@ public class FeatureScene {
         gridPane.setPadding(new Insets(50));
 
         Button aboutUniButton = createTransparentButton("About Uni");
-        aboutUniButton.setStyle("-fx-text-fill: purple;");
+        aboutUniButton.setStyle("-fx-text-fill: green;");
         aboutUniButton.setOnAction(e -> {
             // Logika untuk tombol "About Uni"
             AboutUni aboutUni = new AboutUni(stage);
@@ -37,25 +37,25 @@ public class FeatureScene {
         });
 
         Button learningButton = createTransparentButton("Learning");
-        learningButton.setStyle("-fx-text-fill: purple;");
+        learningButton.setStyle("-fx-text-fill: green;");
         learningButton.setOnAction(e -> {
             // Logika untuk tombol "Learning"
         });
 
         Button exercisesButton = createTransparentButton("Exercises");
-        exercisesButton.setStyle("-fx-text-fill: purple;");
+        exercisesButton.setStyle("-fx-text-fill: green;");
         exercisesButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"
         });
 
         Button backButton = createTransparentButton("Back");
-        backButton.setStyle("-fx-text-fill: purple");
+        backButton.setStyle("-fx-text-fill: black;");
         backButton.setOnAction(e -> {
             Home home = new Home(stage);
             home.show();
         });
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/Feature.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/MenuDesign.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
