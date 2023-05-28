@@ -1,12 +1,10 @@
 package Educatum.Scene;
 
-// import Educatum.Scene.AboutUniScene;
-// import Educatum.Scene.LearningScene;
-// import Educatum.Scene.ExercisesScene;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundRepeat;
@@ -25,27 +23,24 @@ public class FeatureScene {
 
     public void show() {
         GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setAlignment(Pos.CENTER_LEFT); // Mengubah posisi grid ke kiri
         gridPane.setHgap(20);
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(50));
 
         Button aboutUniButton = createTransparentButton("About Uni");
         aboutUniButton.setOnAction(e -> {
-            // AboutUniScene aboutUniScene = new AboutUniScene(stage);
-            // aboutUniScene.show();
+            // Logika untuk tombol "About Uni"
         });
 
         Button learningButton = createTransparentButton("Learning");
         learningButton.setOnAction(e -> {
-            // LearningScene learningScene = new LearningScene(stage);
-            // learningScene.show();
+            // Logika untuk tombol "Learning"
         });
 
         Button exercisesButton = createTransparentButton("Exercises");
         exercisesButton.setOnAction(e -> {
-            // ExercisesScene exercisesScene = new ExercisesScene(stage);
-            // exercisesScene.show();
+            // Logika untuk tombol "Exercises"
         });
 
         Button backButton = createTransparentButton("Back");
@@ -54,18 +49,19 @@ public class FeatureScene {
             home.show();
         });
 
-        Button startButton = createTransparentButton("Start");
-        startButton.setOnAction(e -> {
-            // Logika untuk kembali ke scene Home saat tombol Start ditekan
-            Home home = new Home(stage);
-            home.show();
-        });
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/Feature.png"));
+
+        BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
+                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
+
+        Background background = new Background(backgroundImg);
+        gridPane.setBackground(background);
 
         gridPane.add(aboutUniButton, 0, 0);
-        gridPane.add(learningButton, 1, 0);
-        gridPane.add(exercisesButton, 2, 0);
-        gridPane.add(backButton, 0, 1);
-        gridPane.add(startButton, 2, 1);
+        gridPane.add(learningButton, 0, 1);
+        gridPane.add(exercisesButton, 0, 2);
+        gridPane.add(backButton, 0, 3);
 
         Scene scene = new Scene(gridPane, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
@@ -81,4 +77,3 @@ public class FeatureScene {
         return button;
     }
 }
-
