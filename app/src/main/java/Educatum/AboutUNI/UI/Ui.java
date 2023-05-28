@@ -27,35 +27,36 @@ public class Ui {
         gridPane.setAlignment(Pos.CENTER_RIGHT); // Mengubah posisi grid ke kanan
         gridPane.setHgap(20);
         gridPane.setVgap(20);
-        gridPane.setPadding(new Insets(50));
+        gridPane.setPadding(new Insets(70));
 
-        Button aboutUniButton = createTransparentButton("Jurusan");
-        aboutUniButton.setStyle("-fx-text-fill: purple;");
-        aboutUniButton.setOnAction(e -> {
-            // Logika untuk tombol "About Uni"
+        Button jurusanButton = createTransparentButton("jurusan");
+        jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setOnAction(e -> {
+            JurusanUI jurusan = new JurusanUI(stage);
+            jurusan.show();
             
         });
 
-        Button learningButton = createTransparentButton("Alamat");
-        learningButton.setStyle("-fx-text-fill: purple;");
-        learningButton.setOnAction(e -> {
+        Button alamatButton = createTransparentButton("Alamat");
+        alamatButton.setStyle("-fx-text-fill: green;");
+        alamatButton.setOnAction(e -> {
             // Logika untuk tombol "Learning"
         });
 
-        Button exercisesButton = createTransparentButton("Seleksi Masuk");
-        exercisesButton.setStyle("-fx-text-fill: purple;");
-        exercisesButton.setOnAction(e -> {
+        Button seleksiButton = createTransparentButton("Seleksi Masuk");
+        seleksiButton.setStyle("-fx-text-fill: green;");
+        seleksiButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"
         });
 
         Button backButton = createTransparentButton("Back");
-        backButton.setStyle("-fx-text-fill: purple");
+        backButton.setStyle("-fx-text-fill: black");
         backButton.setOnAction(e -> {
             AboutUni aboutuni = new AboutUni(stage);
             aboutuni.show();
         });
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/Feature.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/UI1Design.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
@@ -64,9 +65,9 @@ public class Ui {
         Background background = new Background(backgroundImg);
         gridPane.setBackground(background);
 
-        gridPane.add(aboutUniButton, 0, 0);
-        gridPane.add(learningButton, 0, 1);
-        gridPane.add(exercisesButton, 0, 2);
+        gridPane.add(jurusanButton, 0, 0);
+        gridPane.add(alamatButton, 0, 1);
+        gridPane.add(seleksiButton, 0, 2);
         gridPane.add(backButton, 0, 3);
 
         Scene scene = new Scene(gridPane, 640, 480);

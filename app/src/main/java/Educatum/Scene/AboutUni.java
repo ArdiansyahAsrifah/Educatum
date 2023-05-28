@@ -73,8 +73,8 @@ public class AboutUni {
 
         gridPane.add(uiButton, 0, 1);
         gridPane.add(unhasButton, 2, 1);
-        gridPane.add(backButton, 0, 4);
-        gridPane.add(homeButton, 0, 5);
+        gridPane.add(backButton, 0, 5);
+        gridPane.add(homeButton, 0, 6);
 
         Scene scene = new Scene(gridPane, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
