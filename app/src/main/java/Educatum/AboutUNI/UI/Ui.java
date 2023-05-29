@@ -47,7 +47,8 @@ public class Ui {
         Button seleksiButton = createTransparentButton("Seleksi Masuk");
         seleksiButton.setStyle("-fx-text-fill: green;");
         seleksiButton.setOnAction(e -> {
-            // Logika untuk tombol "Exercises"
+            SeleksiUI seleksiUI = new SeleksiUI(stage);
+            seleksiUI.show();
         });
 
         Button backButton = createTransparentButton("Back");
