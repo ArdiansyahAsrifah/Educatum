@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
+// import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
@@ -89,9 +89,9 @@ public class AboutUni {
         Button button = new Button(buttonText);
         button.setStyle("-fx-background-color: transparent;");
         button.setTextFill(Color.BLACK); // Ubah warna teks tombol
-        button.setOnAction(e -> {
-            // Aksi lain yang ingin lakukan saat tombol diklik
-        });
+        // button.setOnAction(e -> {
+        //     // Aksi lain yang ingin lakukan saat tombol diklik
+        // });
         return button;
     }
 }

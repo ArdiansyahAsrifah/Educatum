@@ -36,10 +36,11 @@ public class FeatureScene {
             aboutUni.show();
         });
 
-        Button learningButton = createTransparentButton("Learning");
+        Button learningButton = createTransparentButton("rationalization");
         learningButton.setStyle("-fx-text-fill: green;");
         learningButton.setOnAction(e -> {
-            // Logika untuk tombol "Learning"
+            Rational rational = new Rational(stage);
+            rational.start(stage);
         });
 
         Button exercisesButton = createTransparentButton("Exercises");

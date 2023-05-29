@@ -10,6 +10,8 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         Home home = new Home(primaryStage);
         home.show();
+
+        primaryStage.setTitle("EDUCATUM");
     }
 
     public static void main(String[] args) {
