@@ -1,6 +1,7 @@
 package Educatum.Scene;
 
 import Educatum.AboutUNI.UI.Ui;
+import Educatum.AboutUNI.UNHAS.Unhas;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -44,6 +45,8 @@ public class AboutUni {
         unhasButton.setStyle("-fx-font-weight: bold");
         unhasButton.setOnAction(e -> {
             // unhasButton.setBackground(new Background(new BackgroundFill(Color.YELLOW, null, null))); // Ubah latar belakang tombol saat diklik
+            Unhas unhas = new Unhas(stage);
+            unhas.show();
         });
 
         Button backButton = createButton("Back");
