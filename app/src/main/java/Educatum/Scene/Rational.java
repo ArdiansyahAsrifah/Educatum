@@ -35,10 +35,35 @@ public class Rational extends Application {
     public void start(Stage primaryStage) {
         // Data pendaftar jurusan
         jurusanPendaftar = new HashMap<>();
-        jurusanPendaftar.put("Universitas Indonesia - Teknik Informatika", 100);
-        jurusanPendaftar.put("Universitas Indonesia - Teknik Elektro", 150);
+        
+        //UNIVERSITAS INDONESIA
+        jurusanPendaftar.put("Universitas Indonesia - Sistem Informasi", 1544);
+        jurusanPendaftar.put("Universitas Indonesia - Teknik Elektro", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter", 1544);
+        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter Gigi", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Kesehatan Masyarakat", 1544);
+        jurusanPendaftar.put("Universitas Indonesia - Teknik Bioproses", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hukum", 1544);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Komunikasi", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Akuntansi", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hubungan Internasional", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Psikologi", 417);
+
+
+        //UNIVERSITAS HASANUDDIN
         jurusanPendaftar.put("Universitas Hasanuddin - Teknik Sipil", 80);
         jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Komputer", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Psikologi", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Pendidikan Dokter Gigi", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran Hewan", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Gizi", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Teknik Pertambangan", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Arsitektur", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Manajemen", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Akuntansi", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Pemerintahan", 120);
+        jurusanPendaftar.put("Universitas Hasanuddin - Sastra Jepang", 80);
 
 
         GridPane gridPane = new GridPane();
@@ -131,9 +156,9 @@ public class Rational extends Application {
     private String[] getMajors(String university) {
         switch (university) {
             case "Universitas Indonesia":
-                return new String[]{"Teknik Informatika", "Teknik Elektro"};
+                return new String[]{"Sistem Informasi", "Teknik Elektro", "Pendidikan Dokter", "Pendidikan Dokter Gigi", "Ilmu Kesehatan Masyarakat", "Teknik Bioproses", "Hukum", "Ilmu Komunikasi", "Akuntansi", "Ilmu Hubungan Internasional", "Ilmu Psikologi"};
             case "Universitas Hasanuddin":
-                return new String[]{"Teknik Sipil", "Ilmu Komputer"};
+                return new String[]{"Teknik Sipil", "Ilmu Komputer", "Psikologi", "Kedokteran", "Pendidikan Dokter Gigi", "Kedokteran Hewan", "Gizi", "Teknik Pertambangan", "Arsitektur", "Manajemen", "Akuntansi", "Ilmu Pemerintahan", "Sastra Jepang"};
             default:
                 return new String[]{};
         }
