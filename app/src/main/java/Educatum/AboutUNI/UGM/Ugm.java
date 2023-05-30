@@ -1,5 +1,6 @@
-package Educatum.Scene;
+package Educatum.AboutUNI.UGM;
 
+import Educatum.Scene.AboutUni;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,51 +15,50 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class FeatureScene {
+public class Ugm {
     private Stage stage;
 
-    public FeatureScene(Stage stage) {
+    public Ugm(Stage stage) {
         this.stage = stage;
     }
 
     public void show() {
         GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER_LEFT); // Mengubah posisi grid ke kiri
+        gridPane.setAlignment(Pos.CENTER_RIGHT); // Mengubah posisi grid ke kanan
         gridPane.setHgap(20);
         gridPane.setVgap(20);
-        gridPane.setPadding(new Insets(50));
+        gridPane.setPadding(new Insets(70));
 
-        Button aboutUniButton = createTransparentButton("About Uni");
-        aboutUniButton.setStyle("-fx-text-fill: green;");
-        aboutUniButton.setOnAction(e -> {
-            // Logika untuk tombol "About Uni"
-            AboutUni aboutUni = new AboutUni(stage);
-            aboutUni.show();
+        Button jurusanButton = createTransparentButton("jurusan");
+        jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setOnAction(e -> {
+            JurusanUGM jurusan = new JurusanUGM(stage);
+            jurusan.show();
+            
         });
 
-        Button learningButton = createTransparentButton("Rasionalisasi");
-        learningButton.setStyle("-fx-text-fill: green;");
-        learningButton.setOnAction(e -> {
-            Rational rational = new Rational(stage);
-            rational.start(stage);
+        Button alamatButton = createTransparentButton("Alamat");
+        alamatButton.setStyle("-fx-text-fill: green;");
+        alamatButton.setOnAction(e -> {
+            AlamatUGM alamatUI = new AlamatUGM(stage);
+            alamatUI.show();
         });
 
-        Button exercisesButton = createTransparentButton("Exercises");
-        exercisesButton.setStyle("-fx-text-fill: green;");
-        exercisesButton.setOnAction(e -> {
-            // Logika untuk tombol "Exercises"
-            Exercises exercises = new Exercises(stage);
-            exercises.start(stage);
+        Button seleksiButton = createTransparentButton("Seleksi Masuk");
+        seleksiButton.setStyle("-fx-text-fill: green;");
+        seleksiButton.setOnAction(e -> {
+            SeleksiUGM seleksiUI = new SeleksiUGM(stage);
+            seleksiUI.show();
         });
 
         Button backButton = createTransparentButton("Back");
-        backButton.setStyle("-fx-text-fill: black;");
+        backButton.setStyle("-fx-text-fill: black");
         backButton.setOnAction(e -> {
-            Home home = new Home(stage);
-            home.show();
+            AboutUni aboutuni = new AboutUni(stage);
+            aboutuni.show();
         });
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/MenuDesign.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/images/DesignAboutUniUGM.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
@@ -67,9 +67,9 @@ public class FeatureScene {
         Background background = new Background(backgroundImg);
         gridPane.setBackground(background);
 
-        gridPane.add(aboutUniButton, 0, 0);
-        gridPane.add(learningButton, 0, 1);
-        gridPane.add(exercisesButton, 0, 2);
+        gridPane.add(jurusanButton, 0, 0);
+        gridPane.add(alamatButton, 0, 1);
+        gridPane.add(seleksiButton, 0, 2);
         gridPane.add(backButton, 0, 3);
 
         Scene scene = new Scene(gridPane, 640, 480);
@@ -85,4 +85,5 @@ public class FeatureScene {
         button.setFont(Font.font(18));
         return button;
     }
-}
+} 
+

@@ -1,5 +1,6 @@
 package Educatum.Scene;
 
+import Educatum.AboutUNI.UGM.Ugm;
 import Educatum.AboutUNI.UI.Ui;
 import Educatum.AboutUNI.UNHAS.Unhas;
 import javafx.geometry.Insets;
@@ -49,6 +50,14 @@ public class AboutUni {
             unhas.show();
         });
 
+        Button ugmButton = createButton("Universitas Gadjah Mada");
+    
+        ugmButton.setStyle("-fx-font-weight: bold");
+        ugmButton.setOnAction(e -> {
+            Ugm ugm = new Ugm(stage);
+            ugm.show();
+        });
+
         Button backButton = createButton("Back");
         backButton.setFont(Font.font(14));
         backButton.setStyle("-fx-text-fill: green");
@@ -76,6 +85,7 @@ public class AboutUni {
 
         gridPane.add(uiButton, 0, 1);
         gridPane.add(unhasButton, 2, 1);
+        gridPane.add(ugmButton, 4, 1);
         gridPane.add(backButton, 0, 5);
         gridPane.add(homeButton, 0, 6);
 

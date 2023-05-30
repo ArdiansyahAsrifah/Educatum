@@ -1,34 +1,35 @@
-package Educatum.Scene;
+package Educatum.Soal;
 
-import Educatum.Soal.No02;
-import Educatum.Soal.No03;
-import Educatum.Soal.No04;
-import Educatum.Soal.No05;
+import javafx.stage.Stage;
+import Educatum.Scene.Exercises;
+import Educatum.Scene.FeatureScene;
 import Educatum.Utils.AnswerScene;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
+import javafx.scene.text.TextAlignment;
 
-public class Exercises extends Application {
+public class No03 {
     private Stage stage;
 
-    public Exercises(Stage stage) {
+    public No03(Stage stage) {
         this.stage = stage;
     }
 
-    @Override
-    public void start(Stage primaryStage) {
+    public void start(){
         VBox root = new VBox(10);
         root.setPadding(new Insets(20));
         root.setAlignment(Pos.CENTER);
@@ -39,12 +40,12 @@ public class Exercises extends Application {
         VBox questionBox = new VBox(10);
         questionBox.setAlignment(Pos.BOTTOM_CENTER);
 
-        Label questionLabel = new Label("Jika, seandainya, apabila merupakan bagian dari ...");
+        Label questionLabel = new Label("Ruang lingkup biologi yang perlu mikroskop, misalnya ...");
         questionLabel.setFont(Font.font("Helvetica Bold", 16));
-        RadioButton option1 = new RadioButton("Konjungsi Temporal");
-        RadioButton option2 = new RadioButton("Verba Tingkah Laku");
-        RadioButton option3 = new RadioButton("Verba Material");
-        RadioButton option4 = new RadioButton("Konjungsi Syarat");
+        RadioButton option1 = new RadioButton("Atom dan molekul");
+        RadioButton option2 = new RadioButton("Organel, sel dan jaringan");
+        RadioButton option3 = new RadioButton("Bioma dan Biosfer");
+        RadioButton option4 = new RadioButton("Membran Sel");
 
         ToggleGroup toggleGroup = new ToggleGroup();
         option1.setToggleGroup(toggleGroup);
@@ -65,21 +66,21 @@ public class Exercises extends Application {
 
         submitButton.setOnAction(e -> {
             RadioButton selectedOption = (RadioButton) toggleGroup.getSelectedToggle();
-            if (selectedOption != null && selectedOption.getText().equals("Konjungsi Syarat")) {
-                String explanation = "Konjungsi adalah kata hubung, konjungsi syarat menggunakan kata jika, seandainya, apabila.";
+            if (selectedOption != null && selectedOption.getText().equals("Organel, sel dan jaringan")) {
+                String explanation = "Organel, sel dan jaringan memerlukan mikroskop";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
-                    No02 no02 = new No02(primaryStage);
-                    no02.start();
+                    No04 no04 = new No04(stage);
+                    no04.start();
                     
                 });
                 answerScene.show();
             } else {
-                String explanation = "Konjungsi adalah kata hubung, konjungsi syarat menggunakan kata jika, seandainya, apabila.";
+                String explanation = "Organel, sel dan jaringan memerlukan mikroskop";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
-                    No02 no02 = new No02(primaryStage);
-                    no02.start();
+                    No04 no04 = new No04(stage);
+                    no04.start();
                 });
                 answerScene.show();
             }
@@ -100,16 +101,18 @@ public class Exercises extends Application {
         numberBox.setPadding(new Insets(0, 20, 0, 60));
 
         Button number1Button = new Button("1");
+        number1Button.setStyle("-fx-text-fill: Green; Bold");
+        number1Button.setOnAction(e -> {
+            Exercises exercises = new Exercises(stage);
+            exercises.show();
+        });
         Button number2Button = new Button("2");
+        number2Button.setStyle("-fx-text-fill: Green; Bold");
         number2Button.setOnAction(e -> {
             No02 no02 = new No02(stage);
             no02.start();
         });
         Button number3Button = new Button("3");
-        number3Button.setOnAction(e -> {
-            No03 no03 = new No03(stage);
-            no03.start();
-        });
         Button number4Button = new Button("4");
         number4Button.setOnAction(e -> {
             No04 no04 = new No04(stage);
@@ -138,15 +141,17 @@ public class Exercises extends Application {
         VBox.setMargin(questionBox, new Insets(0, 0, 50, 0));
 
         Scene scene = new Scene(root, 640, 480);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void show() {
-        start(stage);
-    }
-
+    
     public static void main(String[] args) {
         launch(args);
     }
+
+    private static void launch(String[] args) {
+    }
 }
+
+    
