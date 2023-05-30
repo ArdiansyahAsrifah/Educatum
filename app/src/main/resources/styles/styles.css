@@ -84,3 +84,7 @@
     -fx-max-width: 200px;
     -fx-font-size: 20px;
 }
+
+#univ-button {
+    -fx-background-radius: 20px;
+}

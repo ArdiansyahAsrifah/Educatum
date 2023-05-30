@@ -35,6 +35,7 @@ public class AboutUni {
         Button uiButton = createButton("Universitas Indonesia");
         
         uiButton.setStyle("-fx-font-weight: bold");
+        uiButton.setId("univ-button");
         uiButton.setOnAction(e -> {
             // uiButton.setBackground(new Background(new BackgroundFill(Color.YELLOW, null, null))); // Ubah latar belakang tombol saat diklik
             Ui ui = new Ui(stage);
@@ -44,6 +45,7 @@ public class AboutUni {
         Button unhasButton = createButton("Universitas Hasanuddin");
     
         unhasButton.setStyle("-fx-font-weight: bold");
+        unhasButton.setId("univ-button");
         unhasButton.setOnAction(e -> {
             // unhasButton.setBackground(new Background(new BackgroundFill(Color.YELLOW, null, null))); // Ubah latar belakang tombol saat diklik
             Unhas unhas = new Unhas(stage);
@@ -53,6 +55,7 @@ public class AboutUni {
         Button ugmButton = createButton("Universitas Gadjah Mada");
     
         ugmButton.setStyle("-fx-font-weight: bold");
+        ugmButton.setId("univ-button");
         ugmButton.setOnAction(e -> {
             Ugm ugm = new Ugm(stage);
             ugm.show();
