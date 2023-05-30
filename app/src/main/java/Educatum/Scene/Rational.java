@@ -39,31 +39,31 @@ public class Rational extends Application {
         //UNIVERSITAS INDONESIA
         jurusanPendaftar.put("Universitas Indonesia - Sistem Informasi", 1544);
         jurusanPendaftar.put("Universitas Indonesia - Teknik Elektro", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter", 1544);
-        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter Gigi", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Ilmu Kesehatan Masyarakat", 1544);
-        jurusanPendaftar.put("Universitas Indonesia - Teknik Bioproses", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hukum", 1544);
-        jurusanPendaftar.put("Universitas Indonesia - Ilmu Komunikasi", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Akuntansi", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hubungan Internasional", 417);
-        jurusanPendaftar.put("Universitas Indonesia - Ilmu Psikologi", 417);
+        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter", 2861);
+        jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter Gigi", 700);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Kesehatan Masyarakat", 846);
+        jurusanPendaftar.put("Universitas Indonesia - Teknik Bioproses", 126);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hukum", 2641);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Komunikasi", 1980);
+        jurusanPendaftar.put("Universitas Indonesia - Akuntansi", 1570);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Hubungan Internasional", 1091);
+        jurusanPendaftar.put("Universitas Indonesia - Ilmu Psikologi", 2651);
 
 
         //UNIVERSITAS HASANUDDIN
-        jurusanPendaftar.put("Universitas Hasanuddin - Teknik Sipil", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Komputer", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Psikologi", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Pendidikan Dokter Gigi", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran Hewan", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Gizi", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Teknik Pertambangan", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Arsitektur", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Manajemen", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Akuntansi", 80);
-        jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Pemerintahan", 120);
-        jurusanPendaftar.put("Universitas Hasanuddin - Sastra Jepang", 80);
+        jurusanPendaftar.put("Universitas Hasanuddin - Teknik Sipil", 1270);
+        jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Komputer", 961);
+        jurusanPendaftar.put("Universitas Hasanuddin - Psikologi", 1412);
+        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran", 3782);
+        jurusanPendaftar.put("Universitas Hasanuddin - Pendidikan Dokter Gigi", 1709);
+        jurusanPendaftar.put("Universitas Hasanuddin - Kedokteran Hewan", 474);
+        jurusanPendaftar.put("Universitas Hasanuddin - Gizi", 990);
+        jurusanPendaftar.put("Universitas Hasanuddin - Teknik Pertambangan", 1661);
+        jurusanPendaftar.put("Universitas Hasanuddin - Arsitektur", 661);
+        jurusanPendaftar.put("Universitas Hasanuddin - Manajemen", 1997);
+        jurusanPendaftar.put("Universitas Hasanuddin - Akuntansi", 1070);
+        jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Pemerintahan", 489);
+        jurusanPendaftar.put("Universitas Hasanuddin - Sastra Jepang", 163);
 
 
         GridPane gridPane = new GridPane();
