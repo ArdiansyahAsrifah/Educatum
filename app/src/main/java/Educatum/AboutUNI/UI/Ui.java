@@ -29,8 +29,9 @@ public class Ui {
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(70));
 
-        Button jurusanButton = createTransparentButton("jurusan");
+        Button jurusanButton = createTransparentButton("Jurusan");
         jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setId("jurusan-button");
         jurusanButton.setOnAction(e -> {
             JurusanUI jurusan = new JurusanUI(stage);
             jurusan.show();
@@ -39,6 +40,7 @@ public class Ui {
 
         Button alamatButton = createTransparentButton("Alamat");
         alamatButton.setStyle("-fx-text-fill: green;");
+        alamatButton.setId("alamat-button");
         alamatButton.setOnAction(e -> {
             AlamatUI alamatUI = new AlamatUI(stage);
             alamatUI.show();
@@ -46,6 +48,7 @@ public class Ui {
 
         Button seleksiButton = createTransparentButton("Seleksi Masuk");
         seleksiButton.setStyle("-fx-text-fill: green;");
+        seleksiButton.setId("seleksi-button");
         seleksiButton.setOnAction(e -> {
             SeleksiUI seleksiUI = new SeleksiUI(stage);
             seleksiUI.show();
@@ -53,6 +56,7 @@ public class Ui {
 
         Button backButton = createTransparentButton("Back");
         backButton.setStyle("-fx-text-fill: black");
+        backButton.setId("back-button");
         backButton.setOnAction(e -> {
             AboutUni aboutuni = new AboutUni(stage);
             aboutuni.show();

@@ -30,6 +30,7 @@ public class FeatureScene {
 
         Button aboutUniButton = createTransparentButton("About Uni");
         aboutUniButton.setStyle("-fx-text-fill: green;");
+        aboutUniButton.setId("aboutUni-button");
         aboutUniButton.setOnAction(e -> {
             // Logika untuk tombol "About Uni"
             AboutUni aboutUni = new AboutUni(stage);
@@ -38,6 +39,7 @@ public class FeatureScene {
 
         Button learningButton = createTransparentButton("Rasionalisasi");
         learningButton.setStyle("-fx-text-fill: green;");
+        learningButton.setId("learning-button");
         learningButton.setOnAction(e -> {
             Rational rational = new Rational(stage);
             rational.start(stage);
@@ -45,6 +47,7 @@ public class FeatureScene {
 
         Button exercisesButton = createTransparentButton("Exercises");
         exercisesButton.setStyle("-fx-text-fill: green;");
+        exercisesButton.setId("exercises-button");
         exercisesButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"
             Exercises exercises = new Exercises(stage);
@@ -53,6 +56,7 @@ public class FeatureScene {
 
         Button backButton = createTransparentButton("Back");
         backButton.setStyle("-fx-text-fill: black;");
+        backButton.setId("back-button");
         backButton.setOnAction(e -> {
             Home home = new Home(stage);
             home.show();

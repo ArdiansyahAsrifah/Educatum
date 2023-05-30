@@ -12,6 +12,7 @@ public class App extends Application {
         home.show();
 
         primaryStage.setTitle("EDUCATUM");
+        primaryStage.setResizable(false);
     }
 
     public static void main(String[] args) {

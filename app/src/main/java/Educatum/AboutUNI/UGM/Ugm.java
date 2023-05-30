@@ -29,8 +29,9 @@ public class Ugm {
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(70));
 
-        Button jurusanButton = createTransparentButton("jurusan");
+        Button jurusanButton = createTransparentButton("Jurusan");
         jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setId("jurusan-button");
         jurusanButton.setOnAction(e -> {
             JurusanUGM jurusan = new JurusanUGM(stage);
             jurusan.show();
@@ -39,6 +40,7 @@ public class Ugm {
 
         Button alamatButton = createTransparentButton("Alamat");
         alamatButton.setStyle("-fx-text-fill: green;");
+        alamatButton.setId("alamat-button");
         alamatButton.setOnAction(e -> {
             AlamatUGM alamatUI = new AlamatUGM(stage);
             alamatUI.show();
@@ -46,6 +48,7 @@ public class Ugm {
 
         Button seleksiButton = createTransparentButton("Seleksi Masuk");
         seleksiButton.setStyle("-fx-text-fill: green;");
+        seleksiButton.setId("seleksi-button");
         seleksiButton.setOnAction(e -> {
             SeleksiUGM seleksiUI = new SeleksiUGM(stage);
             seleksiUI.show();
@@ -53,6 +56,7 @@ public class Ugm {
 
         Button backButton = createTransparentButton("Back");
         backButton.setStyle("-fx-text-fill: black");
+        backButton.setId("back-button");
         backButton.setOnAction(e -> {
             AboutUni aboutuni = new AboutUni(stage);
             aboutuni.show();

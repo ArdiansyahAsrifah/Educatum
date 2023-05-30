@@ -29,8 +29,9 @@ public class Unhas {
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(70));
 
-        Button jurusanButton = createTransparentButton("jurusan");
+        Button jurusanButton = createTransparentButton("Jurusan");
         jurusanButton.setStyle("-fx-text-fill: maroon;");
+        jurusanButton.setId("jurusan-button");
         jurusanButton.setOnAction(e -> {
             JurusanUnhas jurusan = new JurusanUnhas(stage);
             jurusan.show();
@@ -39,6 +40,7 @@ public class Unhas {
 
         Button alamatButton = createTransparentButton("Alamat");
         alamatButton.setStyle("-fx-text-fill: maroon;");
+        alamatButton.setId("alamat-button");
         alamatButton.setOnAction(e -> {
             AlamatUnhas alamatUnhas = new AlamatUnhas(stage);
             alamatUnhas.show();
@@ -46,6 +48,7 @@ public class Unhas {
 
         Button seleksiButton = createTransparentButton("Seleksi Masuk");
         seleksiButton.setStyle("-fx-text-fill: maroon;");
+        seleksiButton.setId("seleksi-button");
         seleksiButton.setOnAction(e -> {
             SeleksiUnhas seleksiUI = new SeleksiUnhas(stage);
             seleksiUI.show();
@@ -53,6 +56,7 @@ public class Unhas {
 
         Button backButton = createTransparentButton("Back");
         backButton.setStyle("-fx-text-fill: black");
+        backButton.setId("back-button");
         backButton.setOnAction(e -> {
             AboutUni aboutuni = new AboutUni(stage);
             aboutuni.show();

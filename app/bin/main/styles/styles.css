@@ -22,3 +22,65 @@
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
+
+#aboutUni-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 120px;
+    -fx-font-size: 20px;
+}
+
+#learning-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 200px;
+    -fx-font-size: 20px;
+}
+
+#exercises-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 120px;
+    -fx-font-size: 20px;
+}
+
+#back-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 80px;
+    -fx-font-size: 20px;
+}
+
+#backKecil-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 70px;
+    -fx-font-size: 16px;
+}
+
+#home-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 70px;
+    -fx-font-size: 15px;
+}
+
+#jurusan-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 100px;
+    -fx-font-size: 20px;
+}
+
+#alamat-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 100px;
+    -fx-font-size: 20px;
+}
+#seleksi-button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-max-width: 200px;
+    -fx-font-size: 20px;
+}
