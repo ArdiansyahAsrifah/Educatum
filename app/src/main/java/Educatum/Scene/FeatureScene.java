@@ -47,6 +47,8 @@ public class FeatureScene {
         exercisesButton.setStyle("-fx-text-fill: green;");
         exercisesButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"
+            Exercises exercises = new Exercises(stage);
+            exercises.start(stage);
         });
 
         Button backButton = createTransparentButton("Back");
