@@ -38,6 +38,7 @@ public class AlamatUnhas {
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
 
         Button backButton = new Button("Back");
+        backButton.setId("alamat_unhasbutt");
         backButton.setOnAction(e -> {
             Unhas unhas = new Unhas(stage);
             unhas.show();
@@ -48,6 +49,7 @@ public class AlamatUnhas {
         gridPane.setBackground(background);
 
         Scene scene = new Scene(gridPane, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

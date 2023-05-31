@@ -34,7 +34,8 @@ public class JurusanUnhas {
         gridPane.setPadding(new Insets(50));
 
         Button jurusanButton = createButton("Back");
-        jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setStyle("-fx-text-fill: black;");
+        jurusanButton.setId("unhasbuttonjur");
         jurusanButton.setOnAction(e -> {
             Unhas unhas = new Unhas(stage);
             unhas.show();

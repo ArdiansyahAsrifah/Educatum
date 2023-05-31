@@ -25,66 +25,294 @@
 
 #aboutUni-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgb(41, 92, 74);
     -fx-font-family: "Arial";
-    -fx-max-width: 120px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
 #learning-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgb(41, 92, 74);
     -fx-font-family: "Arial";
-    -fx-max-width: 200px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
 #exercises-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgb(41, 92, 74);
     -fx-font-family: "Arial";
-    -fx-max-width: 120px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
 #back-button {
+    -fx-background-color: rgb(255, 255, 255);
     -fx-background-radius: 20px;
     -fx-font-family: "Arial";
     -fx-max-width: 80px;
-    -fx-font-size: 20px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
 }
 
 #backKecil-button {
     -fx-background-radius: 20px;
     -fx-font-family: "Arial";
-    -fx-max-width: 70px;
-    -fx-font-size: 16px;
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
 }
 
 #home-button {
     -fx-background-radius: 20px;
     -fx-font-family: "Arial";
-    -fx-max-width: 70px;
-    -fx-font-size: 15px;
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
 }
 
 #jurusan-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.874);
     -fx-font-family: "Arial";
-    -fx-max-width: 100px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
 #alamat-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.874);
     -fx-font-family: "Arial";
-    -fx-max-width: 100px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 #seleksi-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.874);
     -fx-font-family: "Arial";
-    -fx-max-width: 200px;
-    -fx-font-size: 20px;
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
 #univ-button {
     -fx-background-radius: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.874);
+    -fx-font-family: "Arial";
+    -fx-max-width: 150px;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
+
+#unhasbuttonjur {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#seleksi_unhas_button {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#alamat_unhasbutt {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+
+#seleksi_uibutt {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#jurusan-ui {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#back-ui {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#back-ugm {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#jurusan-ugm {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#alamat-ugm {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+
+#no1 {
+    -fx-font-family: "Arial";
+    -fx-background-color: rgba(0, 27, 56, 0.893);
+    -fx-font-color: white;
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#no2 {
+    -fx-font-family: "Arial";
+    -fx-background-color: rgba(0, 27, 56, 0.893);
+    -fx-font-color: white;
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#no3 {
+    -fx-font-family: "Arial";
+    -fx-background-color: rgba(0, 27, 56, 0.893);
+    -fx-font-color: white;
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#no4 {
+    -fx-font-family: "Arial";
+    -fx-background-color: rgba(0, 27, 56, 0.893);
+    -fx-font-color: white;
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#no5 {
+    -fx-font-family: "Arial";
+    -fx-background-color: rgba(0, 27, 56, 0.893);
+    -fx-font-color: white;
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+   
+}
+
+#submit-1 {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#back-1 {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#lanjutkanbutt {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#back-ra {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#submit-rat {
+    -fx-background-radius: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* #uni-label {
+    -fx-background-radius: 20px;
+    -fx-background-color: rgb(0, 12, 32);
+    -fx-font-family: "Arial";
+    -fx-max-width: 150px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+} */

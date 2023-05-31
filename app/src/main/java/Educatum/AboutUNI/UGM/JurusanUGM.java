@@ -34,7 +34,8 @@ public class JurusanUGM {
         gridPane.setPadding(new Insets(50));
 
         Button jurusanButton = createButton("Back");
-        jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setId("jurusan-ugm");
+        jurusanButton.setStyle("-fx-text-fill: black;");
         jurusanButton.setOnAction(e -> {
             Ugm ui = new Ugm(stage);
             ui.show();

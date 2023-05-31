@@ -25,6 +25,7 @@ public class AnswerScene extends Application {
         this.answerText = answerText;
         this.explanation = explanation;
         this.nextButton = new Button("Lanjutkan");
+        nextButton.setId("lanjutkanbutt");
     }
 
     @Override
@@ -54,6 +55,7 @@ public class AnswerScene extends Application {
         vbox.setBackground(background);
 
         Scene scene = new Scene(vbox, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }

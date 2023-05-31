@@ -34,7 +34,7 @@ public class JurusanUI {
         gridPane.setPadding(new Insets(50));
 
         Button jurusanButton = createButton("Back");
-        jurusanButton.setStyle("-fx-text-fill: green;");
+        jurusanButton.setStyle("-fx-text-fill: black;");
         jurusanButton.setOnAction(e -> {
             Ui ui = new Ui(stage);
             ui.show();
@@ -62,6 +62,7 @@ public class JurusanUI {
 
     private Button createButton(String buttonText) {
         Button button = new Button(buttonText);
+        button.setId("jurusan-ui");
         button.setStyle("-fx-background-color: transparent;");
         button.setTextFill(Color.BLACK);
         return button;

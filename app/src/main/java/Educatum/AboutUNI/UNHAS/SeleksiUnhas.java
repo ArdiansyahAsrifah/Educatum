@@ -65,6 +65,7 @@ public class SeleksiUnhas {
 
         // Create back button
         Button backButton = new Button("Back");
+        backButton.setId("seleksi_unhas_button");
         backButton.setOnAction(e -> {
             Unhas UI = new Unhas(stage);
             UI.show();
@@ -81,6 +82,7 @@ public class SeleksiUnhas {
         vbox.setBackground(background);
 
         Scene scene = new Scene(vbox, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

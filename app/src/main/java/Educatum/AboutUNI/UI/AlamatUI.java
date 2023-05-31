@@ -38,6 +38,7 @@ public class AlamatUI {
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
 
         Button backButton = new Button("Back");
+        backButton.setId("back-ui");
         backButton.setOnAction(e -> {
             Ui jUi = new Ui(stage);
             jUi.show();
@@ -48,6 +49,7 @@ public class AlamatUI {
         gridPane.setBackground(background);
 
         Scene scene = new Scene(gridPane, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

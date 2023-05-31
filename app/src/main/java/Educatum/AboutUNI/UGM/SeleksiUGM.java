@@ -63,6 +63,7 @@ public class SeleksiUGM {
 
         // Create back button
         Button backButton = new Button("Back");
+        backButton.setId("back-ugm");
         backButton.setOnAction(e -> {
             Ugm UI = new Ugm(stage);
             UI.show();
@@ -79,6 +80,7 @@ public class SeleksiUGM {
         vbox.setBackground(background);
 
         Scene scene = new Scene(vbox, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

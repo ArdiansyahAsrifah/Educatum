@@ -101,24 +101,32 @@ public class No03 {
         numberBox.setPadding(new Insets(0, 20, 0, 60));
 
         Button number1Button = new Button("1");
-        number1Button.setStyle("-fx-text-fill: Green; Bold");
-        number1Button.setOnAction(e -> {
-            Exercises exercises = new Exercises(stage);
-            exercises.show();
-        });
+        number1Button.setId("no1");
+        number1Button.setStyle("-fx-text-fill: white");
         Button number2Button = new Button("2");
-        number2Button.setStyle("-fx-text-fill: Green; Bold");
+        number2Button.setId("no2");
+        number2Button.setStyle("-fx-text-fill: white");
         number2Button.setOnAction(e -> {
             No02 no02 = new No02(stage);
             no02.start();
         });
         Button number3Button = new Button("3");
+        number3Button.setId("no3");
+        number3Button.setStyle("-fx-text-fill: white");
+        number3Button.setOnAction(e -> {
+            No03 no03 = new No03(stage);
+            no03.start();
+        });
         Button number4Button = new Button("4");
+        number4Button.setId("no4");
+        number4Button.setStyle("-fx-text-fill: white");
         number4Button.setOnAction(e -> {
             No04 no04 = new No04(stage);
             no04.start();
         });
         Button number5Button = new Button("5");
+        number5Button.setId("no5");
+        number5Button.setStyle("-fx-text-fill: white");
         number5Button.setOnAction(e -> {
             No05 no05 = new No05(stage);
             no05.start();
@@ -141,6 +149,7 @@ public class No03 {
         VBox.setMargin(questionBox, new Insets(0, 0, 50, 0));
 
         Scene scene = new Scene(root, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

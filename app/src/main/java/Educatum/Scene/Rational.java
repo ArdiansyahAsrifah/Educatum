@@ -87,6 +87,7 @@ public class Rational extends Application {
         });
 
         Button submitButton = new Button("Submit");
+        submitButton.setId("submit-rat");
         Label resultLabel = new Label();
 
         submitButton.setOnAction(e -> {
@@ -131,6 +132,7 @@ public class Rational extends Application {
 
 
         Button raButton = new Button("Back");
+        raButton.setId("back-ra");
         raButton.setOnAction(e -> {
             FeatureScene featureScene = new FeatureScene(primaryStage);
             featureScene.show();
@@ -149,6 +151,7 @@ public class Rational extends Application {
         gridPane.add(raButton, 2, 3);
 
         Scene scene = new Scene(gridPane, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }

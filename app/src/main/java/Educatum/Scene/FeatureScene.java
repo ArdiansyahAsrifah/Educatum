@@ -29,7 +29,7 @@ public class FeatureScene {
         gridPane.setPadding(new Insets(50));
 
         Button aboutUniButton = createTransparentButton("About Uni");
-        aboutUniButton.setStyle("-fx-text-fill: green;");
+        aboutUniButton.setStyle("-fx-text-fill: white;");
         aboutUniButton.setId("aboutUni-button");
         aboutUniButton.setOnAction(e -> {
             // Logika untuk tombol "About Uni"
@@ -38,7 +38,7 @@ public class FeatureScene {
         });
 
         Button learningButton = createTransparentButton("Rasionalisasi");
-        learningButton.setStyle("-fx-text-fill: green;");
+        learningButton.setStyle("-fx-text-fill: white;");
         learningButton.setId("learning-button");
         learningButton.setOnAction(e -> {
             Rational rational = new Rational(stage);
@@ -46,7 +46,7 @@ public class FeatureScene {
         });
 
         Button exercisesButton = createTransparentButton("Exercises");
-        exercisesButton.setStyle("-fx-text-fill: green;");
+        exercisesButton.setStyle("-fx-text-fill: white;");
         exercisesButton.setId("exercises-button");
         exercisesButton.setOnAction(e -> {
             // Logika untuk tombol "Exercises"

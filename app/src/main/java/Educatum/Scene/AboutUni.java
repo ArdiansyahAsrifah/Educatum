@@ -62,7 +62,7 @@ public class AboutUni {
         });
 
         Button backButton = createButton("Back");
-        backButton.setStyle("-fx-text-fill: green");
+        backButton.setStyle("-fx-text-fill: black");
         backButton.setId("backKecil-button");
         backButton.setOnAction(e -> {
             FeatureScene featureScene = new FeatureScene(stage);
@@ -71,7 +71,7 @@ public class AboutUni {
 
         Button homeButton = createButton("Home");
         homeButton.setFont(Font.font(14));
-        homeButton.setStyle("-fx-text-fill: green");
+        homeButton.setStyle("-fx-text-fill: black");
         homeButton.setId("home-button");
         homeButton.setOnAction(e -> {
             Home home = new Home(stage);

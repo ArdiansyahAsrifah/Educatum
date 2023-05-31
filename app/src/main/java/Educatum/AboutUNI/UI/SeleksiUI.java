@@ -65,6 +65,7 @@ public class SeleksiUI {
 
         // Create back button
         Button backButton = new Button("Back");
+        backButton.setId("seleksi_uibutt");
         backButton.setOnAction(e -> {
             Ui UI = new Ui(stage);
             UI.show();
@@ -81,6 +82,7 @@ public class SeleksiUI {
         vbox.setBackground(background);
 
         Scene scene = new Scene(vbox, 640, 480);
+        scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
