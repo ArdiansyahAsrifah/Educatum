@@ -15,11 +15,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class AnswerScene extends Application {
+    //mendeklarasikan atribut
     private Stage stage;
     private String answerText;
     private String explanation;
     private Button nextButton;
 
+    //Membuat Konstruktor
     public AnswerScene(Stage stage, String answerText, String explanation) {
         this.stage = stage;
         this.answerText = answerText;
@@ -27,24 +29,28 @@ public class AnswerScene extends Application {
         this.nextButton = new Button("Lanjutkan");
         nextButton.setId("lanjutkanbutt");
     }
-
+    //Membuat method start
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Answer");
 
+        //Mengatur tata letak
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(10);
         vbox.setPadding(new Insets(20));
 
+        //Mendeklarasikan answer label
         Label answerLabel = new Label(answerText);
         answerLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
 
+        //Menambahkan explanationlabel
         Label explanationLabel = new Label(explanation);
 
+        //Mengatur vbox
         vbox.getChildren().addAll(answerLabel, explanationLabel, nextButton);
         vbox.setMargin(nextButton, new Insets(20, 0, 0, 0));
 
+        //Menambahkan image sebagai backround
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/03.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
@@ -54,6 +60,7 @@ public class AnswerScene extends Application {
         Background background = new Background(backgroundImg);
         vbox.setBackground(background);
 
+        //Mendeklarasikan stage
         Scene scene = new Scene(vbox, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);

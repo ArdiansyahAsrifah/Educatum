@@ -39,13 +39,17 @@ public class Exercises extends Application {
         VBox questionBox = new VBox(10);
         questionBox.setAlignment(Pos.BOTTOM_CENTER);
 
+        // Membuat label untuk pertanyaan
         Label questionLabel = new Label("Jika, seandainya, apabila merupakan bagian dari ...");
         questionLabel.setFont(Font.font("Helvetica Bold", 16));
+
+        // Membuat radio button untuk pilihan jawaban
         RadioButton option1 = new RadioButton("Konjungsi Temporal");
         RadioButton option2 = new RadioButton("Verba Tingkah Laku");
         RadioButton option3 = new RadioButton("Verba Material");
         RadioButton option4 = new RadioButton("Konjungsi Syarat");
 
+        // Membuat ToggleGroup untuk mengelompokkan radio button
         ToggleGroup toggleGroup = new ToggleGroup();
         option1.setToggleGroup(toggleGroup);
         option2.setToggleGroup(toggleGroup);
@@ -60,23 +64,28 @@ public class Exercises extends Application {
         VBox buttonBox = new VBox(10);
         buttonBox.setAlignment(Pos.CENTER);
 
+        // Membuat tombol untuk submit jawaban
         Button submitButton = new Button("Submit");
         submitButton.setId("submit-exe");
+
+        // Membuat tombol untuk kembali ke halaman sebelumnya
         Button backButton = new Button("Back");
         backButton.setId("back-exe");
 
         submitButton.setOnAction(e -> {
+            // Mendapatkan pilihan jawaban yang dipilih oleh pengguna
             RadioButton selectedOption = (RadioButton) toggleGroup.getSelectedToggle();
             if (selectedOption != null && selectedOption.getText().equals("Konjungsi Syarat")) {
+                // Jika jawaban benar, tampilkan scene dengan pesan jawaban benar
                 String explanation = "Konjungsi adalah kata hubung, konjungsi syarat menggunakan kata jika, seandainya, apabila.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
                     No02 no02 = new No02(primaryStage);
                     no02.start();
-                    
                 });
                 answerScene.show();
             } else {
+                // Jika jawaban salah, tampilkan scene dengan pesan jawaban salah
                 String explanation = "Konjungsi adalah kata hubung, konjungsi syarat menggunakan kata jika, seandainya, apabila.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
@@ -137,16 +146,14 @@ public class Exercises extends Application {
 
         root.getChildren().addAll(numberBox, contentBox);
 
+        // Mengatur latar belakang
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/04.png"));
-
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
-
         Background background = new Background(backgroundImg);
         root.setBackground(background);
 
-        
         VBox.setMargin(questionBox, new Insets(0, 0, 50, 0));
 
         Scene scene = new Scene(root, 640, 480);

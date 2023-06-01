@@ -13,10 +13,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +25,7 @@ public class SeleksiUnhas {
         this.stage = stage;
     }
 
+    //Membuat method show
     public void show() {
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
@@ -53,7 +52,7 @@ public class SeleksiUnhas {
 
         table.getColumns().addAll(seleksiColumn, biayaColumn, waktuColumn);
 
-        // Add data to the table
+        // Menambahkan data ke tabel
         List<SeleksiData> seleksiDataList = Arrays.asList(
                 new SeleksiData("SNBP", "GRATIS", "14 Februari 2023"),
                 new SeleksiData("SNBT", "Rp. 200.000", "08 Mei 2023"),
@@ -63,7 +62,7 @@ public class SeleksiUnhas {
         table.setItems(FXCollections.observableList(seleksiDataList));
         vbox.getChildren().add(table);
 
-        // Create back button
+        // Membuat button back
         Button backButton = new Button("Back");
         backButton.setId("seleksi_unhas_button");
         backButton.setOnAction(e -> {
@@ -71,8 +70,10 @@ public class SeleksiUnhas {
             UI.show();
         });
 
+        //Mengatur Vbox
         vbox.getChildren().add(backButton);
 
+        //Menambahkan gambar sebagai backround
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/UnhasBackDesign.png"));
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
@@ -81,6 +82,7 @@ public class SeleksiUnhas {
         Background background = new Background(backgroundImg);
         vbox.setBackground(background);
 
+        //Mengatur stage 
         Scene scene = new Scene(vbox, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
@@ -89,16 +91,18 @@ public class SeleksiUnhas {
 
     // Data class for seleksi
     public static class SeleksiData {
+        //Deklarasikan atribut
         private String seleksiMasuk;
         private String biayaPendaftaran;
         private String waktuPelaksanaan;
 
+        //Adanya Konstruktor
         public SeleksiData(String seleksiMasuk, String biayaPendaftaran, String waktuPelaksanaan) {
             this.seleksiMasuk = seleksiMasuk;
             this.biayaPendaftaran = biayaPendaftaran;
             this.waktuPelaksanaan = waktuPelaksanaan;
         }
-
+        //Menambahkan get
         public String getSeleksiMasuk() {
             return seleksiMasuk;
         }

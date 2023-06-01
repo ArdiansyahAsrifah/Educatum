@@ -15,12 +15,16 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class FeatureScene {
+
+    //Encapsulation stage
     private Stage stage;
 
+    //Buat construction
     public FeatureScene(Stage stage) {
         this.stage = stage;
     }
 
+    //Deklarasikan method show()
     public void show() {
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER_LEFT); // Mengubah posisi grid ke kiri
@@ -28,6 +32,7 @@ public class FeatureScene {
         gridPane.setVgap(20);
         gridPane.setPadding(new Insets(50));
 
+        //Membuat button about uni dan men set warna textnya, id, dan apabila di klik akan berpindah scene ke aboutUniscene
         Button aboutUniButton = createTransparentButton("About Uni");
         aboutUniButton.setStyle("-fx-text-fill: white;");
         aboutUniButton.setId("aboutUni-button");
@@ -37,14 +42,17 @@ public class FeatureScene {
             aboutUni.show();
         });
 
+        //Membuat button rational dan men set warna textnya, id, dan apabila di klik akan berpindah scene ke aboutUniscene
         Button learningButton = createTransparentButton("Rasionalisasi");
         learningButton.setStyle("-fx-text-fill: white;");
         learningButton.setId("learning-button");
         learningButton.setOnAction(e -> {
+            // Logika untuk tombol "rational"
             Rational rational = new Rational(stage);
             rational.start(stage);
         });
 
+        //Membuat button exercises dan men set warna textnya, id, dan apabila di klik akan berpindah scene ke aboutUniscene
         Button exercisesButton = createTransparentButton("Exercises");
         exercisesButton.setStyle("-fx-text-fill: white;");
         exercisesButton.setId("exercises-button");
@@ -54,6 +62,7 @@ public class FeatureScene {
             exercises.start(stage);
         });
 
+        //Membuat button back dan men set warna textnya, id, dan apabila di klik akan berpindah scene ke aboutUniscene
         Button backButton = createTransparentButton("Back");
         backButton.setStyle("-fx-text-fill: black;");
         backButton.setId("back-button");
@@ -62,6 +71,7 @@ public class FeatureScene {
             home.show();
         });
 
+        //Menambahkan image sebagai backround
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/MenuDesign.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
@@ -71,11 +81,13 @@ public class FeatureScene {
         Background background = new Background(backgroundImg);
         gridPane.setBackground(background);
 
+        //Mengatur tata letak buttonnya
         gridPane.add(aboutUniButton, 0, 0);
         gridPane.add(learningButton, 0, 1);
         gridPane.add(exercisesButton, 0, 2);
         gridPane.add(backButton, 0, 3);
 
+        //Deklarasikan scene dan import css
         Scene scene = new Scene(gridPane, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);

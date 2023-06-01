@@ -19,14 +19,16 @@ import java.util.Map;
 import Educatum.Utils.SelectorEval;
 
 public class Rational extends Application {
+    //Mendeklarasikan variabel sebagai objek map dimana juga ditentukan key nya sebagai value
     private Map<String, Integer> jurusanPendaftar;
     private Map<String, Integer> jurusanKuota;
+    //mendeklarasikan stage
     private Stage stage;
-
+    //membuat contruktor
     public Rational(Stage stage) {
         this.stage = stage;
     }
-
+    //membuat method start yang berisi content
     @Override
     public void start(Stage primaryStage) {
         // Data pendaftar jurusan
@@ -87,21 +89,23 @@ public class Rational extends Application {
         jurusanKuota.put("Universitas Hasanuddin - Ilmu Pemerintahan", 100);
         jurusanKuota.put("Universitas Hasanuddin - Sastra Jepang", 50);
 
-    
-
+        //Membuat gridpane untuk tata letak
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setHgap(10);
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(20));
 
+        //Membuat textfield yang berupa skor utbk
         Label utbkLabel = new Label("Skor UTBK:");
         TextField utbkField = new TextField();
 
+        //Membat choicebox yang berisi universitas yang tersedia
         Label universityLabel = new Label("Universitas:");
         ChoiceBox<String> universityChoiceBox = new ChoiceBox<>();
         universityChoiceBox.setItems(FXCollections.observableArrayList("Universitas Indonesia", "Universitas Hasanuddin"));
 
+        //Membuat choicebox yang berisi program studi yang berdasarkan universitas yang dipilih
         Label majorLabel = new Label("Program Studi:");
         ChoiceBox<String> majorChoiceBox = new ChoiceBox<>();
 
@@ -109,30 +113,31 @@ public class Rational extends Application {
             majorChoiceBox.setItems(FXCollections.observableArrayList(getMajors(newValue)));
         });
 
+        //Membuat tombol submit
         Button submitButton = new Button("Submit");
         submitButton.setId("submit-rat");
-
+        //Set submit untuk melakukan beberapa action sekaligus
         submitButton.setOnAction(e -> {
             String selectedUniversity = universityChoiceBox.getValue();
             String selectedMajor = majorChoiceBox.getValue();
             int utbkScore = Integer.parseInt(utbkField.getText());
-        
+            //Pengkondisian apabila tidak mengisi textfield dan langsung menekan submit maka akan keluar output error
             if (selectedUniversity == null || selectedMajor == null || utbkField.getText().isEmpty()) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Harap lengkapi semua input");
                 alert.showAndWait();
+            //tampilkan hasil
             } else {
-        
-        
                 SelectorEval selectorEval = new SelectorEval(utbkScore, selectedUniversity, selectedMajor);
                 String result = selectorEval.evaluate();
-
+            //hasilnya berupa jurusan dan apakah berpeluang atau tidak didukung oleh utils
             String message = "Hasil Evaluasi\n\n" +
             "Jurusan : " + selectedMajor + "\n\n" +
             result;
 
+            //Menampilkan pop up message
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Hasil Evaluasi");
             alert.setHeaderText(null);
@@ -141,7 +146,7 @@ public class Rational extends Application {
             }
         });
         
-
+        //Mengatur tata letak
         gridPane.add(utbkLabel, 0, 0);
         gridPane.add(utbkField, 1, 0);
         gridPane.add(universityLabel, 0, 1);
@@ -150,6 +155,7 @@ public class Rational extends Application {
         gridPane.add(majorChoiceBox, 1, 2);
         gridPane.add(submitButton, 0, 3);
 
+        //Mengatur gambar jadi backround aplikasi
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/RationalDesign.png"));
 
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
@@ -159,6 +165,7 @@ public class Rational extends Application {
         Background background = new Background(backgroundImg);
         gridPane.setBackground(background);
 
+        //Mendeklarasikan scene dan mengimport css
         Scene scene = new Scene(gridPane, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);
@@ -166,6 +173,7 @@ public class Rational extends Application {
         primaryStage.show();
     }
 
+    //menerapkan switchcase untuk jurusan setiap universitas
     private String[] getMajors(String university) {
         switch (university) {
             case "Universitas Indonesia":

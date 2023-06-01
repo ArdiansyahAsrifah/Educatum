@@ -27,17 +27,18 @@ public class SeleksiUGM {
     }
 
     public void show() {
+        // Membuat VBox sebagai layout utama
         VBox vbox = new VBox();
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(20);
         vbox.setPadding(new Insets(50));
 
-        // Buat Tabel
+        // Membuat Tabel
         TableView<SeleksiData> table = new TableView<>();
         table.setPrefWidth(600);
         table.setPrefHeight(400);
 
-        // Buat Kolom
+        // Membuat Kolom
         TableColumn<SeleksiData, String> seleksiColumn = new TableColumn<>("Seleksi Masuk");
         seleksiColumn.setCellValueFactory(new PropertyValueFactory<>("seleksiMasuk"));
         seleksiColumn.setPrefWidth(100);
@@ -52,7 +53,7 @@ public class SeleksiUGM {
 
         table.getColumns().addAll(seleksiColumn, biayaColumn, waktuColumn);
 
-        // Add data to the table
+        // Menambahkan data ke dalam tabel
         List<SeleksiData> seleksiDataList = Arrays.asList(
                 new SeleksiData("SNBP", "GRATIS", "14 Februari 2023"),
                 new SeleksiData("SNBT", "Rp. 200.000", "08 Mei 2023"),
@@ -61,7 +62,7 @@ public class SeleksiUGM {
         table.setItems(FXCollections.observableList(seleksiDataList));
         vbox.getChildren().add(table);
 
-        // Create back button
+        // Membuat tombol "Back"
         Button backButton = new Button("Back");
         backButton.setId("back-ugm");
         backButton.setOnAction(e -> {
@@ -71,6 +72,7 @@ public class SeleksiUGM {
 
         vbox.getChildren().add(backButton);
 
+        // Mengatur latar belakang menggunakan gambar
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/AboutUNIUGM2.png"));
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
@@ -79,13 +81,14 @@ public class SeleksiUGM {
         Background background = new Background(backgroundImg);
         vbox.setBackground(background);
 
+        // Membuat scene dan menampilkan stage
         Scene scene = new Scene(vbox, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
 
-    // Data class for seleksi
+    // Kelas data untuk seleksi
     public static class SeleksiData {
         private String seleksiMasuk;
         private String biayaPendaftaran;
