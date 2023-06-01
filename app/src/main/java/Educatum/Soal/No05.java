@@ -62,7 +62,10 @@ public class No05 {
         buttonBox.setAlignment(Pos.CENTER);
 
         Button submitButton = new Button("Submit");
+        submitButton.setId("submit-exe");
         Button backButton = new Button("Back");
+        backButton.setId("back-exe");
+
 
         submitButton.setOnAction(e -> {
             RadioButton selectedOption = (RadioButton) toggleGroup.getSelectedToggle();
@@ -103,6 +106,10 @@ public class No05 {
         Button number1Button = new Button("1");
         number1Button.setId("no1");
         number1Button.setStyle("-fx-text-fill: white");
+        number1Button.setOnAction(e -> {
+            Exercises exercises = new Exercises(stage);
+            exercises.show();
+        });
         Button number2Button = new Button("2");
         number2Button.setId("no2");
         number2Button.setStyle("-fx-text-fill: white");
@@ -126,7 +133,7 @@ public class No05 {
         });
         Button number5Button = new Button("5");
         number5Button.setId("no5");
-        number5Button.setStyle("-fx-text-fill: white");
+        number5Button.setStyle("-fx-text-fill: yellow");
         number5Button.setOnAction(e -> {
             No05 no05 = new No05(stage);
             no05.start();

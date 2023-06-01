@@ -61,9 +61,9 @@ public class Exercises extends Application {
         buttonBox.setAlignment(Pos.CENTER);
 
         Button submitButton = new Button("Submit");
-        submitButton.setId("submit-1");
+        submitButton.setId("submit-exe");
         Button backButton = new Button("Back");
-        backButton.setId("back-1");
+        backButton.setId("back-exe");
 
         submitButton.setOnAction(e -> {
             RadioButton selectedOption = (RadioButton) toggleGroup.getSelectedToggle();
@@ -103,7 +103,7 @@ public class Exercises extends Application {
 
         Button number1Button = new Button("1");
         number1Button.setId("no1");
-        number1Button.setStyle("-fx-text-fill: white");
+        number1Button.setStyle("-fx-text-fill: yellow");
         Button number2Button = new Button("2");
         number2Button.setId("no2");
         number2Button.setStyle("-fx-text-fill: white");

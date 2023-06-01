@@ -263,7 +263,7 @@
    
 }
 
-#submit-1 {
+#submit-exe {
     -fx-background-radius: 20px;
     -fx-font-family: "Arial";
     -fx-background-color: rgb(255, 255, 255);
@@ -272,7 +272,7 @@
     -fx-font-weight: bold;
 }
 
-#back-1 {
+#back-exe {
     -fx-background-radius: 20px;
     -fx-font-family: "Arial";
     -fx-background-color: rgb(255, 255, 255);
