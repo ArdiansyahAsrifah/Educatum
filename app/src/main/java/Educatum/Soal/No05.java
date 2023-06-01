@@ -24,6 +24,7 @@ import javafx.scene.text.TextAlignment;
 
 public class No05 {
     private Stage stage;
+    private int correctAnswers;
 
     public No05(Stage stage) {
         this.stage = stage;
@@ -135,8 +136,8 @@ public class No05 {
         number5Button.setId("no5");
         number5Button.setStyle("-fx-text-fill: yellow");
         number5Button.setOnAction(e -> {
-            No05 no05 = new No05(stage);
-            no05.start();
+            // ResultScene resultScene = new ResultScene(stage, correctAnswers);
+            // resultScene.show(); // Menampilkan ResultScene
         });
 
         numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button);

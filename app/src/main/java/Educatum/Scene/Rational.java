@@ -13,19 +13,15 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
-
 import javafx.stage.Stage;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import Educatum.Utils.SelectorEval;
 
 public class Rational extends Application {
     private Map<String, Integer> jurusanPendaftar;
-
+    private Map<String, Integer> jurusanKuota;
     private Stage stage;
-    
 
     public Rational(Stage stage) {
         this.stage = stage;
@@ -35,8 +31,9 @@ public class Rational extends Application {
     public void start(Stage primaryStage) {
         // Data pendaftar jurusan
         jurusanPendaftar = new HashMap<>();
-        
-        //UNIVERSITAS INDONESIA
+        jurusanKuota = new HashMap<>();
+
+        // UNIVERSITAS INDONESIA
         jurusanPendaftar.put("Universitas Indonesia - Sistem Informasi", 1544);
         jurusanPendaftar.put("Universitas Indonesia - Teknik Elektro", 417);
         jurusanPendaftar.put("Universitas Indonesia - Pendidikan Dokter", 2861);
@@ -49,8 +46,19 @@ public class Rational extends Application {
         jurusanPendaftar.put("Universitas Indonesia - Ilmu Hubungan Internasional", 1091);
         jurusanPendaftar.put("Universitas Indonesia - Ilmu Psikologi", 2651);
 
+        jurusanKuota.put("Universitas Indonesia - Sistem Informasi", 100);
+        jurusanKuota.put("Universitas Indonesia - Teknik Elektro", 50);
+        jurusanKuota.put("Universitas Indonesia - Pendidikan Dokter", 200);
+        jurusanKuota.put("Universitas Indonesia - Pendidikan Dokter Gigi", 70);
+        jurusanKuota.put("Universitas Indonesia - Ilmu Kesehatan Masyarakat", 80);
+        jurusanKuota.put("Universitas Indonesia - Teknik Bioproses", 30);
+        jurusanKuota.put("Universitas Indonesia - Ilmu Hukum", 150);
+        jurusanKuota.put("Universitas Indonesia - Ilmu Komunikasi", 100);
+        jurusanKuota.put("Universitas Indonesia - Akuntansi", 120);
+        jurusanKuota.put("Universitas Indonesia - Ilmu Hubungan Internasional", 80);
+        jurusanKuota.put("Universitas Indonesia - Ilmu Psikologi", 200);
 
-        //UNIVERSITAS HASANUDDIN
+        // UNIVERSITAS HASANUDDIN
         jurusanPendaftar.put("Universitas Hasanuddin - Teknik Sipil", 1270);
         jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Komputer", 961);
         jurusanPendaftar.put("Universitas Hasanuddin - Psikologi", 1412);
@@ -65,6 +73,21 @@ public class Rational extends Application {
         jurusanPendaftar.put("Universitas Hasanuddin - Ilmu Pemerintahan", 489);
         jurusanPendaftar.put("Universitas Hasanuddin - Sastra Jepang", 163);
 
+        jurusanKuota.put("Universitas Hasanuddin - Teknik Sipil", 200);
+        jurusanKuota.put("Universitas Hasanuddin - Ilmu Komputer", 150);
+        jurusanKuota.put("Universitas Hasanuddin - Psikologi", 180);
+        jurusanKuota.put("Universitas Hasanuddin - Kedokteran", 250);
+        jurusanKuota.put("Universitas Hasanuddin - Pendidikan Dokter Gigi", 100);
+        jurusanKuota.put("Universitas Hasanuddin - Kedokteran Hewan", 80);
+        jurusanKuota.put("Universitas Hasanuddin - Gizi", 120);
+        jurusanKuota.put("Universitas Hasanuddin - Teknik Pertambangan", 180);
+        jurusanKuota.put("Universitas Hasanuddin - Arsitektur", 100);
+        jurusanKuota.put("Universitas Hasanuddin - Manajemen", 180);
+        jurusanKuota.put("Universitas Hasanuddin - Akuntansi", 120);
+        jurusanKuota.put("Universitas Hasanuddin - Ilmu Pemerintahan", 100);
+        jurusanKuota.put("Universitas Hasanuddin - Sastra Jepang", 50);
+
+    
 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
@@ -88,38 +111,44 @@ public class Rational extends Application {
 
         Button submitButton = new Button("Submit");
         submitButton.setId("submit-rat");
-        Label resultLabel = new Label();
 
         submitButton.setOnAction(e -> {
+            String selectedUniversity = universityChoiceBox.getValue();
+            String selectedMajor = majorChoiceBox.getValue();
             int utbkScore = Integer.parseInt(utbkField.getText());
-            String university = universityChoiceBox.getValue();
-            String major = majorChoiceBox.getValue();
-
-            if (university != null && major != null) {
-                SelectorEval evaluator = new SelectorEval(utbkScore, university, major, jurusanPendaftar);
-                String result = evaluator.evaluate();
-                resultLabel.setText(result);
         
-                // Mendapatkan jumlah data pendaftar dan kuota yang diterima
-                int pendaftar = jurusanPendaftar.getOrDefault(university + " - " + major, 0);
-                int kuota = jurusanPendaftar.getOrDefault(university + " - " + major, 0);
-        
-                // Menampilkan informasi jumlah data pendaftar dan kuota yang diterima
-                Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Informasi");
-                alert.setHeaderText("Data Pendaftar dan Kuota");
-                alert.setContentText("Jumlah Data Pendaftar: " + pendaftar + "\nKuota yang Diterima: " + kuota);
+            if (selectedUniversity == null || selectedMajor == null || utbkField.getText().isEmpty()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Harap lengkapi semua input");
                 alert.showAndWait();
             } else {
-                Alert alert = new Alert(AlertType.WARNING);
-                alert.setTitle("Peringatan");
-                alert.setHeaderText("Pilihan Tidak Lengkap");
-                alert.setContentText("Silakan pilih universitas dan jurusan terlebih dahulu.");
-                alert.showAndWait();
+        
+        
+                SelectorEval selectorEval = new SelectorEval(utbkScore, selectedUniversity, selectedMajor);
+                String result = selectorEval.evaluate();
+
+            String message = "Hasil Evaluasi\n\n" +
+            "Jurusan : " + selectedMajor + "\n\n" +
+            result;
+
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Hasil Evaluasi");
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
             }
-    
-            
         });
+        
+
+        gridPane.add(utbkLabel, 0, 0);
+        gridPane.add(utbkField, 1, 0);
+        gridPane.add(universityLabel, 0, 1);
+        gridPane.add(universityChoiceBox, 1, 1);
+        gridPane.add(majorLabel, 0, 2);
+        gridPane.add(majorChoiceBox, 1, 2);
+        gridPane.add(submitButton, 0, 3);
 
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/RationalDesign.png"));
 
@@ -130,40 +159,21 @@ public class Rational extends Application {
         Background background = new Background(backgroundImg);
         gridPane.setBackground(background);
 
-
-        Button raButton = new Button("Back");
-        raButton.setId("back-ra");
-        raButton.setOnAction(e -> {
-            FeatureScene featureScene = new FeatureScene(primaryStage);
-            featureScene.show();
-
-            
-        });
-
-        gridPane.add(utbkLabel, 0, 0);
-        gridPane.add(utbkField, 1, 0);
-        gridPane.add(universityLabel, 0, 1);
-        gridPane.add(universityChoiceBox, 1, 1);
-        gridPane.add(majorLabel, 0, 2);
-        gridPane.add(majorChoiceBox, 1, 2);
-        gridPane.add(submitButton, 0, 3);
-        gridPane.add(resultLabel, 1, 3);
-        gridPane.add(raButton, 2, 3);
-
-        Scene scene = new Scene(gridPane, 640, 480);
+        Scene scene = new Scene(gridPane, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Rational");
         primaryStage.show();
     }
 
     private String[] getMajors(String university) {
         switch (university) {
             case "Universitas Indonesia":
-                return new String[]{"Sistem Informasi", "Teknik Elektro", "Pendidikan Dokter", "Pendidikan Dokter Gigi", "Ilmu Kesehatan Masyarakat", "Teknik Bioproses", "Hukum", "Ilmu Komunikasi", "Akuntansi", "Ilmu Hubungan Internasional", "Ilmu Psikologi"};
+                return jurusanPendaftar.keySet().stream().filter(jurusan -> jurusan.startsWith("Universitas Indonesia")).toArray(String[]::new);
             case "Universitas Hasanuddin":
-                return new String[]{"Teknik Sipil", "Ilmu Komputer", "Psikologi", "Kedokteran", "Pendidikan Dokter Gigi", "Kedokteran Hewan", "Gizi", "Teknik Pertambangan", "Arsitektur", "Manajemen", "Akuntansi", "Ilmu Pemerintahan", "Sastra Jepang"};
+                return jurusanPendaftar.keySet().stream().filter(jurusan -> jurusan.startsWith("Universitas Hasanuddin")).toArray(String[]::new);
             default:
-                return new String[]{};
+                return new String[0];
         }
     }
 

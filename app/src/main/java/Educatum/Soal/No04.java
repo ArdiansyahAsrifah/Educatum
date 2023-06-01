@@ -73,8 +73,8 @@ public class No04 {
                 String explanation = "Virologi ialah cabang biologi yang mempelajari makhluk suborganisme, terutama virus";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
-                    // No02 no02 = new No02(primaryStage);
-                    // no02.show();
+                    No05 no05 = new No05(stage);
+                    no05.start();
                     
                 });
                 answerScene.show();
@@ -82,8 +82,8 @@ public class No04 {
                 String explanation = "Virologi ialah cabang biologi yang mempelajari makhluk suborganisme, terutama virus";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
-                    // No02 no02 = new No02(primaryStage);
-                    // no02.show();
+                    No05 no05 = new No05(stage);
+                    no05.start();
                 });
                 answerScene.show();
             }

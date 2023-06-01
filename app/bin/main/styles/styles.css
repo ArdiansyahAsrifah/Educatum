@@ -301,19 +301,13 @@
 
 #submit-rat {
     -fx-background-radius: 20px;
+    -fx-text-fill: white;
     -fx-font-family: "Arial";
-    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-color: rgb(0, 45, 84);
     -fx-max-width: 100px;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
-/* #uni-label {
-    -fx-background-radius: 20px;
-    -fx-background-color: rgb(0, 12, 32);
-    -fx-font-family: "Arial";
-    -fx-max-width: 150px;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-} */
 
