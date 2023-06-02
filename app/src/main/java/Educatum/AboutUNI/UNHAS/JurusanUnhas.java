@@ -15,14 +15,22 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import Educatum.Utils.DatabaseConfig;
 
 public class JurusanUnhas {
 
     //Deklarasikan atribut
     private Stage stage;
-
+    private Connection conn;
+    private java.sql.Statement stmt;
+    
     //Membuat contruktor
     public JurusanUnhas(Stage stage) {
         this.stage = stage;
@@ -96,59 +104,21 @@ public class JurusanUnhas {
         //Menggabungkan kolom jurusan dan fakultas
         table.getColumns().addAll(jurusanColumn, fakultasColumn);
 
-        //Menambahkan jurusan sebagai isi content tabel
-        List<JurusanData> jurusanDataList = new ArrayList<>();
-        jurusanDataList.add(new JurusanData("Jurusan Kesehatan Masyarakat", "Fakultas Kesehatan Masyarakat"));
-        jurusanDataList.add(new JurusanData("Jurusan Gizi", "Fakultas Kesehatan Masyarakat"));
-        jurusanDataList.add(new JurusanData("Jurusan Pendidikan Dokter", "Fakultas Kedokteran"));
-        jurusanDataList.add(new JurusanData("Jurusan Kedokteran Hewan", "Fakultas Kedokteran"));
-        jurusanDataList.add(new JurusanData("Jurusan Kebidanan", "Fakultas Kedokteran"));
-        jurusanDataList.add(new JurusanData("Jurusan Psikologi", "Fakultas Kedokteran"));
-        jurusanDataList.add(new JurusanData("Jurusan Pendidikan Dokter Gigi", "Fakultas Kedokteran Gigi"));
-        jurusanDataList.add(new JurusanData("Jurusan Hukum Administrasi Negara", "Fakultas Hukum"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Hukum", "Fakultas Hukum"));      
-        jurusanDataList.add(new JurusanData("Jurusan Perencanaan Wilayah Kota", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Kelautan", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Teknik", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Sipil", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Lingkungan", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Mesin", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Elekto", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Pertambangan", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Arsitektur", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Industri", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Teknik Perkapalan", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Teknik Metalurgi", "Fakultas Teknik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Hubungan Internasional", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Komunikasi", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Politik", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Sosiologi", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Antropologi", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Administrasi", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Pemerintahan", "Fakultas Ilmu Sosial Dan Politik"));
-        jurusanDataList.add(new JurusanData("Jurusan Sistem Informasi", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Biologi", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Geofisika", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Fisika", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Kimia", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Matematika", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Statistika", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Farmasi", "Fakultas Farmasi"));
-        jurusanDataList.add(new JurusanData("Jurusan Aktuaria", "Fakultas Matematika dan Ilmu Pengetahuan ALam"));
-        jurusanDataList.add(new JurusanData("Jurusan Sejarah", "Fakultas Ilmu Pengetahuan Budaya"));
-        jurusanDataList.add(new JurusanData("Jurusan Arkeologi", "Fakultas Ilmu Pengetahuan Budaya"));
-        jurusanDataList.add(new JurusanData("Jurusan Sastra Asing", "Fakultas Ilmu Pengetahuan Budaya"));
-        jurusanDataList.add(new JurusanData("Jurusan Sastra Daerah", "Fakultas Ilmu Pengetahuan Budaya"));
-        jurusanDataList.add(new JurusanData("Jurusan Sastra Inggris", "Fakultas Ilmu Pengetahuan Budaya"));
-        jurusanDataList.add(new JurusanData("Jurusan Kehutanan", "Fakultas Kehutanan"));
-        jurusanDataList.add(new JurusanData("Jurusan Peternakan", "Fakultas Peternakan"));
-        jurusanDataList.add(new JurusanData("Jurusan Perikanan", "Fakultas Ilmu Kelautan dan Perikanan"));
-        jurusanDataList.add(new JurusanData("Jurusan Kelautan", "Fakultas Ilmu Kelautan dan Perikanan"));
-        jurusanDataList.add(new JurusanData("Jurusan Budidaya Perairan", "Fakultas Ilmu Kelautan dan Perikanan"));
-        jurusanDataList.add(new JurusanData("Jurusan Manajemen Sumber Daya Perairan", "Fakultas Ilmu Kelautan dan Perikanan"));
-        jurusanDataList.add(new JurusanData("Jurusan Ilmu Keperawatan", "Fakultas Keperawatan"));
-        jurusanDataList.add(new JurusanData("Jurusan Fisioterapi", "Fakultas Keperatwatan"));
-        table.getItems().addAll(jurusanDataList);
+        try {
+            List<JurusanData> jurusanDataList = new ArrayList<>();
+            conn = DatabaseConfig.getConnection();
+            stmt = conn.createStatement();
+            
+            ResultSet rs = stmt.executeQuery("SELECT * FROM jurusan WHERE KAMPUS='UNHAS' ORDER BY ID");
+            while (rs.next()) {
+                String jurusan = rs.getString("JURUSAN");
+                String fakultas = rs.getString("FAKULTAS");
+                jurusanDataList.add(new JurusanData(jurusan, fakultas));
+            }
+            table.getItems().addAll(jurusanDataList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return table;
     }
