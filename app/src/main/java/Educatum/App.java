@@ -1,6 +1,7 @@
 package Educatum;
 
 import Educatum.Scene.Home;
+import Educatum.Utils.DatabaseConfig;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -11,7 +12,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         Home home = new Home(primaryStage);
         home.show();
-
+        DatabaseConfig.getConnection();
         //Set tittle di app
         primaryStage.setTitle("EDUCATUM");
         primaryStage.setResizable(false);
