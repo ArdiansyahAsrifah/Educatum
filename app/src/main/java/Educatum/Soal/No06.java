@@ -86,8 +86,8 @@ public class No06 {
                 String explanation = "Ribosom adalah bagian sel yang dimiliki oleh \nbaik eukariot maupun prokariot yang berperan dalam sintesis protein.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
-                    FeatureScene featureScene = new FeatureScene(stage);
-                    featureScene.show();
+                    ExeFin exeFin = new ExeFin(stage);
+                    exeFin.show();
                     
                 });
                 answerScene.show();
@@ -95,8 +95,8 @@ public class No06 {
                 String explanation = "Ribosom adalah bagian sel yang dimiliki oleh \nbaik eukariot maupun prokariot yang berperan dalam sintesis protein.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
-                    FeatureScene featureScene = new FeatureScene(stage);
-                    featureScene.show();
+                    ExeFin exeFin = new ExeFin(stage);
+                    exeFin.show();
                 });
                 answerScene.show();
             }
@@ -157,7 +157,7 @@ public class No06 {
         number6Button.setStyle("-fx-text-fill: yellow");
         
         // Menambahkan tombol nomor soal ke dalam HBox
-        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button);
+        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button, number6Button);
 
         // Menambahkan HBox nomor soal dan HBox konten ke dalam VBox utama
         root.getChildren().addAll(numberBox, contentBox);
