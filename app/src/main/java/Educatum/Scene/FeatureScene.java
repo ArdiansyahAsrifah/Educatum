@@ -1,5 +1,6 @@
 package Educatum.Scene;
 
+import Educatum.Utils.SceneInterface;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class FeatureScene {
+public class FeatureScene implements SceneInterface {
 
     //Encapsulation stage
     private Stage stage;
