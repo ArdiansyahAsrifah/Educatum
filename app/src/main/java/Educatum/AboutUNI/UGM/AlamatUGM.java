@@ -25,11 +25,11 @@ public class AlamatUGM {
         gridPane.setPadding(new Insets(50));
 
         // Membuat label alamat
-        Label alamatLabel = new Label("Alamat Universitas Indonesia:");
+        Label alamatLabel = new Label("Alamat Universitas Gadjah Mada:");
         alamatLabel.setStyle("-fx-font-size: 16pt; -fx-font-weight: bold;");
 
         // Membuat teks alamat
-        Label alamatText = new Label("Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia");
+        Label alamatText = new Label("Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia");
 
         // Menambahkan label dan teks alamat ke dalam GridPane
         gridPane.add(alamatLabel, 0, 0);
