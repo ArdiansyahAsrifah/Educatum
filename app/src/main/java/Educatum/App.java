@@ -5,6 +5,11 @@ import Educatum.Utils.DatabaseConfig;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+//Muhammad Ardiansyah Asrifah - H071221068
+//Vicky Jesflinto - H071221019
+//Muhammad Rafli Dahlan - H071221104
+
+
 public class App extends Application {
 
     //Menambahkan Stage sebagai langkah awal
