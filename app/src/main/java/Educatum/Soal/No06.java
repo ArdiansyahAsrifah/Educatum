@@ -21,10 +21,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 
-public class No04 {
+public class No06 {
     private Stage stage;
+    
 
-    public No04(Stage stage) {
+    public No06(Stage stage) {
         this.stage = stage;
     }
 
@@ -43,14 +44,14 @@ public class No04 {
         questionBox.setAlignment(Pos.BOTTOM_CENTER);
 
         // Membuat label pertanyaan
-        Label questionLabel = new Label("Ilmu yang mempelajari virus disebut ...");
+        Label questionLabel = new Label("sel yang dimiliki oleh eukariot dan prokariot ...");
         questionLabel.setFont(Font.font("Helvetica Bold", 16));
-        
+       
         // Membuat opsi jawaban dalam bentuk radio button
-        RadioButton option1 = new RadioButton("Sitologi");
-        RadioButton option2 = new RadioButton("Mikologi");
-        RadioButton option3 = new RadioButton("Virologi");
-        RadioButton option4 = new RadioButton("Bakteriologi");
+        RadioButton option1 = new RadioButton("Mitokondria");
+        RadioButton option2 = new RadioButton("Reticulum Endoplasma");
+        RadioButton option3 = new RadioButton("Badan golgi");
+        RadioButton option4 = new RadioButton("Ribosom");
 
         // Membuat grup untuk radio button
         ToggleGroup toggleGroup = new ToggleGroup();
@@ -73,27 +74,29 @@ public class No04 {
         // Membuat tombol submit
         Button submitButton = new Button("Submit");
         submitButton.setId("submit-exe");
+
+        // Membuat tombol back
         Button backButton = new Button("Back");
         backButton.setId("back-exe");
 
         // Menambahkan aksi saat tombol submit ditekan
         submitButton.setOnAction(e -> {
             RadioButton selectedOption = (RadioButton) toggleGroup.getSelectedToggle();
-            if (selectedOption != null && selectedOption.getText().equals("Virologi")) {
-                String explanation = "Virologi ialah cabang biologi yang mempelajari makhluk suborganisme, terutama virus";
+            if (selectedOption != null && selectedOption.getText().equals("Ribosom")) {
+                String explanation = "Ribosom adalah bagian sel yang dimiliki oleh \nbaik eukariot maupun prokariot yang berperan dalam sintesis protein.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
-                    No05 no05 = new No05(stage);
-                    no05.start();
+                    FeatureScene featureScene = new FeatureScene(stage);
+                    featureScene.show();
                     
                 });
                 answerScene.show();
             } else {
-                String explanation = "Virologi ialah cabang biologi yang mempelajari makhluk suborganisme, terutama virus";
+                String explanation = "Ribosom adalah bagian sel yang dimiliki oleh \nbaik eukariot maupun prokariot yang berperan dalam sintesis protein.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
-                    No05 no05 = new No05(stage);
-                    no05.start();
+                    FeatureScene featureScene = new FeatureScene(stage);
+                    featureScene.show();
                 });
                 answerScene.show();
             }
@@ -140,7 +143,7 @@ public class No04 {
         });
         Button number4Button = new Button("4");
         number4Button.setId("no4");
-        number4Button.setStyle("-fx-text-fill: yellow");
+        number4Button.setStyle("-fx-text-fill: white");
         number4Button.setOnAction(e -> {
             No04 no04 = new No04(stage);
             no04.start();
@@ -148,21 +151,13 @@ public class No04 {
         Button number5Button = new Button("5");
         number5Button.setId("no5");
         number5Button.setStyle("-fx-text-fill: white");
-        number5Button.setOnAction(e -> {
-            No05 no05 = new No05(stage);
-            no05.start();
-        });
 
         Button number6Button = new Button("6");
         number6Button.setId("no6");
-        number6Button.setStyle("-fx-text-fill: white");
-        number6Button.setOnAction(e -> {
-            No06 no06 = new No06(stage);
-            no06.start();
-        });
-
+        number6Button.setStyle("-fx-text-fill: yellow");
+        
         // Menambahkan tombol nomor soal ke dalam HBox
-        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button, number6Button);
+        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button);
 
         // Menambahkan HBox nomor soal dan HBox konten ke dalam VBox utama
         root.getChildren().addAll(numberBox, contentBox);
@@ -174,13 +169,12 @@ public class No04 {
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, null,
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
 
-        
         Background background = new Background(backgroundImg);
         root.setBackground(background);
 
-        // Mengatur margin untuk VBox pertanyaan
+         // Mengatur margin untuk VBox pertanyaan
         VBox.setMargin(questionBox, new Insets(0, 0, 50, 0));
-        
+
         // Membuat scene dan mengatur tampilan stage
         Scene scene = new Scene(root, 640, 480);
         scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());

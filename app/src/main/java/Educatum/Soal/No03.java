@@ -150,8 +150,16 @@ public class No03 {
             no05.start();
         });
 
+        Button number6Button = new Button("6");
+        number6Button.setId("no6");
+        number6Button.setStyle("-fx-text-fill: white");
+        number6Button.setOnAction(e -> {
+            No06 no06 = new No06(stage);
+            no06.start();
+        });
+
         // Menambahkan tombol nomor soal ke dalam HBox
-        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button);
+        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button, number6Button);
 
         // Menambahkan HBox nomor soal dan HBox konten ke dalam VBox utama
         root.getChildren().addAll(numberBox, contentBox);

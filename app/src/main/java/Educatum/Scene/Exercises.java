@@ -4,6 +4,7 @@ import Educatum.Soal.No02;
 import Educatum.Soal.No03;
 import Educatum.Soal.No04;
 import Educatum.Soal.No05;
+import Educatum.Soal.No06;
 import Educatum.Utils.AnswerScene;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -142,7 +143,15 @@ public class Exercises extends Application {
             no05.start();
         });
 
-        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button);
+        Button number6Button = new Button("6");
+        number6Button.setId("no6");
+        number6Button.setStyle("-fx-text-fill: white");
+        number6Button.setOnAction(e -> {
+            No06 no06 = new No06(stage);
+            no06.start();
+        });
+
+        numberBox.getChildren().addAll(number1Button, number2Button, number3Button, number4Button, number5Button, number6Button);
 
         root.getChildren().addAll(numberBox, contentBox);
 
