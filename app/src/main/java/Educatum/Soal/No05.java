@@ -86,8 +86,8 @@ public class No05 {
                 String explanation = "Karena glukosa (gula darah) melebihi kadar yang bisa disimpan oleh hati, \nmaka glukosa akan diubah menjadi glikogen atau gula otot.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Benar", explanation);
                 answerScene.setNextAction(() -> {
-                    FeatureScene featureScene = new FeatureScene(stage);
-                    featureScene.show();
+                    No06 no06 = new No06(stage);
+                    no06.start();
                     
                 });
                 answerScene.show();
@@ -95,8 +95,8 @@ public class No05 {
                 String explanation = "Karena glukosa (gula darah) melebihi kadar yang bisa disimpan oleh hati, \nmaka glukosa akan diubah menjadi glikogen atau gula otot.";
                 AnswerScene answerScene = new AnswerScene(stage, "Jawaban Anda Salah", explanation);
                 answerScene.setNextAction(() -> {
-                    FeatureScene featureScene = new FeatureScene(stage);
-                    featureScene.show();
+                    No06 no06 = new No06(stage);
+                    no06.start();
                 });
                 answerScene.show();
             }
