@@ -310,4 +310,13 @@
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
 }
 
-
+#Back-rat {
+    -fx-background-radius: 20px;
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-font-family: "Arial";
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-max-width: 100px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.918), 10, 0, 0, 0);
+}

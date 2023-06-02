@@ -145,6 +145,13 @@ public class Rational extends Application {
             alert.showAndWait();
             }
         });
+
+        Button backbutton = new Button("Back");
+        backbutton.setId("Back-rat");
+        backbutton.setOnAction(e -> {
+            FeatureScene featureScene = new FeatureScene(primaryStage);
+            featureScene.show();
+        });
         
         //Mengatur tata letak
         gridPane.add(utbkLabel, 0, 0);
@@ -154,6 +161,7 @@ public class Rational extends Application {
         gridPane.add(majorLabel, 0, 2);
         gridPane.add(majorChoiceBox, 1, 2);
         gridPane.add(submitButton, 0, 3);
+        gridPane.add(backbutton, 0, 4);
 
         //Mengatur gambar jadi backround aplikasi
         Image backgroundImage = new Image(getClass().getResourceAsStream("/images/RationalDesign.png"));
