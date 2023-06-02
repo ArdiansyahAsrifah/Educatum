@@ -151,6 +151,10 @@ public class No06 {
         Button number5Button = new Button("5");
         number5Button.setId("no5");
         number5Button.setStyle("-fx-text-fill: white");
+        number5Button.setOnAction(e -> {
+            No05 no05 = new No05(stage);
+            no05.start();
+        });
 
         Button number6Button = new Button("6");
         number6Button.setId("no6");
